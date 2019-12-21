@@ -1,0 +1,20 @@
+pipeline {
+	agent ant
+	stages {
+		stage('checkout') {
+			checkout scm
+		}
+		stage('Fortify clean') {
+			fortifyClean addJVMOptions: '', buildID: 'build_1', logFile: '', maxHeap: ''
+		}
+		stage('Update Fotify rules') {
+			fortifyUpdate proxyPassword: '', proxyURL: '', proxyUsername: '', updateServerURL: 'https://update.fortify.com'
+		}
+		stage('Foritfy Analize') {
+			fortifyTranslate addJVMOptions: '', buildID: 'build_1', excludeList: '', logFile: '', maxHeap: '', projectScanType: fortifyDotnetSrc(dotnetAddOptions: '', dotnetFrameworkVersion: '2.2', dotnetLibdirs: '', dotnetSrcFiles: 'src/**/*')
+		}
+		stage('Foritfy Scan') {
+			fortifyScan addJVMOptions: '', addOptions: '', buildID: 'build_1', customRulepacks: '', logFile: '', maxHeap: '', resultsFile: 'result.fpr'
+		}
+	}
+}
