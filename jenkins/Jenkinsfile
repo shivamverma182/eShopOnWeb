@@ -18,7 +18,7 @@ pipeline {
 		}
 		stage('Foritfy Analize') {
 			steps {
-				fortifyTranslate addJVMOptions: '', buildID: 'build_1', excludeList: '', logFile: '', maxHeap: '', projectScanType: fortifyDotnetSrc(dotnetAddOptions: '', dotnetFrameworkVersion: '2.2', dotnetLibdirs: '', dotnetSrcFiles: 'src/**/*')
+				fortifyTranslate addJVMOptions: '', buildID: 'build_1', debug: true , excludeList: '', logFile: '', maxHeap: '', projectScanType: fortifyDotnetSrc(dotnetAddOptions: '', dotnetFrameworkVersion: '2.2', dotnetLibdirs: '', dotnetSrcFiles: 'src/**/*'), verbose: true
 			}
 		}
 		stage('Foritfy Scan') {
