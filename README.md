@@ -1,5 +1,6 @@
 # Microsoft eShopOnWeb ASP.NET Core Reference Application
-# COmmit 1
+# CoOmmit 1
+# Commit 2
 
 Sample ASP.NET Core reference application, powered by Microsoft, demonstrating a single-process (monolithic) application architecture and deployment model. If you're new to .NET development, read the [Getting Started for Beginners](https://github.com/dotnet-architecture/eShopOnWeb/wiki/Getting-Started-for-Beginners) guide.
 
